@@ -1,7 +1,12 @@
-function [Zeq] = Parallel(Z1, Z2)
+function Zeq = Parallel(varargin)
 %Parallel Soy vago
 %   Soy vago
 
-Zeq = (Z1*Z2)/(Z1+Z2); 
+Yeq = 0;
+for i = 1:nargin
+    Yeq = Yeq + 1/varargin{i};
+end
+
+Zeq = 1/Yeq;
 end
 
